@@ -3,9 +3,9 @@ import joblib
 
 app = Flask(__name__)
 
-# Modeli yükleme
+
 model = joblib.load('model.pkl')
-vectorizer = joblib.load('vectorizer.pkl')  # TfidfVectorizer için kaydedilmiş dosya
+vectorizer = joblib.load('vectorizer.pkl')  
 
 @app.route('/')
 def index():
@@ -13,7 +13,7 @@ def index():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    yorum = request.form['yorum']  # HTML formundan gelen veri
+    yorum = request.form['yorum']  
     yorum_vec = vectorizer.transform([yorum])
     prediction = model.predict(yorum_vec)
     sonuc = "Spam" if prediction[0] == 1 else "Spam değil"
