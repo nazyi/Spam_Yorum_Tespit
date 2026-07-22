@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Tespit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        textarea {
+            width: 80%;
+            height: 100px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Yorum Spam Tespit</h1>
+    <form id="yorumForm">
+        <textarea id="yorum" name="yorum" placeholder="Bir yorum girin..."></textarea><br>
+        <button type="button" onclick="predictSpam()">Gönder</button>
+    </form>
+    <p id="sonuc"></p>
+
+    <script>
+        async function predictSpam() {
+            const formData = new FormData(document.getElementById('yorumForm'));
+            const response = await fetch('/predict', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await response.json();
+            document.getElementById('sonuc').innerText = result.sonuc;
+        }
+    </script>
+</body>
+</html>
