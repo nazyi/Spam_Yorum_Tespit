@@ -6,31 +6,17 @@ Makine öğrenmesi tabanlı bu proje, kullanıcı yorumlarını analiz ederek **
 
 İnternet üzerindeki kullanıcı yorumlarının artmasıyla birlikte spam içeriklerin tespit edilmesi önemli bir ihtiyaç haline gelmiştir. Bu proje, yorumların otomatik olarak analiz edilmesini sağlayarak spam içeriklerin hızlı ve doğru bir şekilde belirlenmesine yardımcı olur.
 
-## Özellikler
+## Proje Hakkında
 
-- Kullanıcı yorumlarının analiz edilmesi
-- Metin ön işleme (Text Preprocessing)
-- Spam / Normal yorum sınıflandırması
-- Makine öğrenmesi tabanlı tahmin sistemi
-- Kullanıcı dostu arayüz
+Spam Yorum Tespit Sistemi, kullanıcı yorumlarını doğal dil işleme (NLP) teknikleri ile analiz ederek Spam ya da Spam Değil olarak sınıflandıran bir makine öğrenmesi uygulamasıdır. Metinler TF-IDF ile vektörleştirilir, bir Random Forest sınıflandırıcısı ile eğitilir ve basit bir Flask arayüzü üzerinden gerçek zamanlı tahmin sunulur.
 
-## Kullanılan Teknolojiler
+##  Özellikler
 
-- Python
-- Django
-- HTML / CSS
-- Scikit-learn
-- Pandas
-- NumPy
-- Natural Language Processing (NLP)
-
-## Çalışma Mantığı
-
-1. Kullanıcı yorumunu sisteme girer.
-2. Yorum metni ön işleme adımlarından geçirilir.
-3. Eğitilmiş makine öğrenmesi modeli yorumu analiz eder.
-4. Sistem yorumun **Spam** veya **Normal** olduğunu tahmin eder.
-5. Sonuç kullanıcıya gösterilir.
+📝 Kullanıcının girdiği yorumun anlık olarak analiz edilmesi
+🔤 TF-IDF tabanlı metin vektörleştirme
+🌲 Random Forest sınıflandırıcı ile spam tahmini
+⚡ Flask ile hafif ve hızlı web arayüzü
+🔌 JSON tabanlı /predict API uç noktası
 
 ## Kurulum
 
